@@ -1,11 +1,12 @@
 #include <iostream>
 #include <string>
+#include <iomanip>
 using namespace std;
 
 
 // This program demonstrates partially initialized strucure variables
 
-// PLACE YOUR NAME HERE
+// Beatrix House
 
 struct taxPayer
 {
@@ -21,19 +22,26 @@ int main()
 	// Fill in code to initialize a structure variable named citizen1 so that
 	// the first three members are initilized.  Assume the name is Tim 
 	// McGuiness,the social security number is 255871234, and the tax rate is .35
+	taxPayer citizen1 = {"Tim McGuiness", 255871234, .35};
 
 	// Fill in code to initialize a structure variable named citizen2 so that 
 	// the first three members are initialized.  Assume the name is John Kane,
 	// the social security number is 278990582, and the tax rate is .29
+	taxPayer citizen2 = {"John Kane", 278990582, .29};
 	
 	cout << fixed << showpoint << setprecision(2);
 
 	// calculate taxes due for citizen1
 
 	// Fill in code to prompt the user to enter this year's income for the citizen1
+	cout << "Please enter the yearly income for Tim McGuiness." << endl;
+	
 	// Fill in code to read in this income to the appropriate structure member
+	cin >> citizen1.income;
+	cout << endl;
 
 	// Fill in code to determine this year's taxes for citizen1
+	citizen1.taxes = citizen1.income * citizen1.taxRate;
 
 	
 	cout << "Name: " << citizen1.name << endl;
@@ -44,10 +52,14 @@ int main()
 	// calculate taxes due for citizen2
 
 	// FILL IN CODE to prompt the user to enter this year's income for citizen2
+	cout << "Please enter the yearly income for John Kane." << endl;
+	
 	// FILL IN CODE to read in this income to the appropriate structure member
+	cin >> citizen2.income;
+	cout << endl;
 
 	// FILL IN CODE to determine this year's taxes for citizen2
-
+    citizen2.taxes = citizen2.income * citizen2.taxRate;
 
 
 	cout << "Name: " << citizen2.name << endl;
